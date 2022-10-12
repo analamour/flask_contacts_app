@@ -1,3 +1,12 @@
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+{% for message in messages %}
+<p> {{message}} </p>
+{% endfor %}
+{% endif %}
+{% endwith %}
+
+
 <form action ="/add_contact" method="POST">
 
 
@@ -9,4 +18,24 @@
 </button>
 
 
+<table>
+    <thead>
+        <tr>
+            <td>Nombre</td>
+            <td>Teléfono</td>
+            <td>Email</td>
+            <td>Operaciones</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for contact in contacts %}
+        <tr>
+            <td>{{ contact.1 }}</td>
+            <td>{{ contact.2 }}</td>
+            <td>{{ contact.3 }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 </form>
