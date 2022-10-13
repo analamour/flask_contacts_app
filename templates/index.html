@@ -1,7 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body%}
+
+<div class = "row">
+    <div class="col-md-5">
+       <div class="card card-body">
+
+       </div>
+
+    </div>
+    <div class="col-md-7">
+
+
+    </div>
+    
+    
+
+</div>
 {% with messages = get_flashed_messages() %}
 {% if messages %}
 {% for message in messages %}
-<p> {{message}} </p>
+
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
 {% endfor %}
 {% endif %}
 {% endwith %}
@@ -41,3 +64,5 @@
         {% endfor %}
     </tbody>
 </table>
+
+{% endblock %}
