@@ -33,7 +33,9 @@ def add_contact():
         flash("Contacto agregado")
         return redirect(url_for('Index'))
         
-
+@app.route('/altaCliente')
+def alta_cliente():
+    return 'alta cliente'
 
 @app.route("/edit/<id>")
 def get_contact(id):
@@ -42,6 +44,7 @@ def get_contact(id):
     data = cur.fetchall()
     print(data[0])
     return render_template('edit-contact.html', contact = data[0])
+
 
 @app.route('/update/<id>', methods = ['POST'])
 def update_contact(id):
